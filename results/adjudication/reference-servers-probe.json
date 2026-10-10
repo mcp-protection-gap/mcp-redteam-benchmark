@@ -1,0 +1,357 @@
+{
+  "probed_at": "2026-09-29T12:25:04.859837+00:00",
+  "servers": {
+    "everything": {
+      "install_command": "npx -y @modelcontextprotocol/server-everything",
+      "success": true,
+      "error": null,
+      "n_tools": 13,
+      "tools": [
+        {
+          "name": "echo",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "get-annotated-message",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "get-env",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "get-resource-links",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "get-resource-reference",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "get-structured-content",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "get-sum",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "get-tiny-image",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "gzip-file-as-resource",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "toggle-simulated-logging",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "toggle-subscriber-updates",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "trigger-long-running-operation",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "simulate-research-query",
+          "flags": [],
+          "capabilities": []
+        }
+      ]
+    },
+    "fetch": {
+      "install_command": "uvx mcp-server-fetch",
+      "success": true,
+      "error": null,
+      "n_tools": 1,
+      "tools": [
+        {
+          "name": "fetch",
+          "flags": [],
+          "capabilities": [
+            "network_egress"
+          ]
+        }
+      ]
+    },
+    "filesystem": {
+      "install_command": "npx -y @modelcontextprotocol/server-filesystem /tmp",
+      "success": true,
+      "error": null,
+      "n_tools": 14,
+      "tools": [
+        {
+          "name": "read_file",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "read_text_file",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "read_media_file",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "read_multiple_files",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "write_file",
+          "flags": [],
+          "capabilities": [
+            "fs_read",
+            "fs_write"
+          ]
+        },
+        {
+          "name": "edit_file",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "create_directory",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "list_directory",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "list_directory_with_sizes",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "directory_tree",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "move_file",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "search_files",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "get_file_info",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "list_allowed_directories",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        }
+      ]
+    },
+    "git": {
+      "install_command": "uvx mcp-server-git",
+      "success": true,
+      "error": null,
+      "n_tools": 12,
+      "tools": [
+        {
+          "name": "git_status",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_diff_unstaged",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_diff_staged",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_diff",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_commit",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_add",
+          "flags": [],
+          "capabilities": [
+            "fs_read"
+          ]
+        },
+        {
+          "name": "git_reset",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_log",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_create_branch",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_checkout",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_show",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "git_branch",
+          "flags": [],
+          "capabilities": []
+        }
+      ]
+    },
+    "memory": {
+      "install_command": "npx -y @modelcontextprotocol/server-memory",
+      "success": true,
+      "error": null,
+      "n_tools": 9,
+      "tools": [
+        {
+          "name": "create_entities",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "create_relations",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "add_observations",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "delete_entities",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "delete_observations",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "delete_relations",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "read_graph",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "search_nodes",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "open_nodes",
+          "flags": [],
+          "capabilities": []
+        }
+      ]
+    },
+    "sequentialthinking": {
+      "install_command": "npx -y @modelcontextprotocol/server-sequential-thinking",
+      "success": true,
+      "error": null,
+      "n_tools": 1,
+      "tools": [
+        {
+          "name": "sequentialthinking",
+          "flags": [
+            "hidden_instruction"
+          ],
+          "capabilities": []
+        }
+      ]
+    },
+    "time": {
+      "install_command": "uvx mcp-server-time",
+      "success": true,
+      "error": null,
+      "n_tools": 2,
+      "tools": [
+        {
+          "name": "get_current_time",
+          "flags": [],
+          "capabilities": []
+        },
+        {
+          "name": "convert_time",
+          "flags": [],
+          "capabilities": []
+        }
+      ]
+    }
+  },
+  "n_tools": 52,
+  "n_flagged": 1,
+  "n_any_capability": 15
+}

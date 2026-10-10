@@ -1,0 +1,15 @@
+{
+  "attack_codes": {
+    "W001": 3,
+    "W015": 22
+  },
+  "benign_codes": {
+    "W001": 22,
+    "W016": 54,
+    "W019": 47,
+    "W017": 26,
+    "W015": 7
+  },
+  "n_benign_flags": 142,
+  "n_benign_flags_only_codes_never_raised_on_attacks": 115
+}

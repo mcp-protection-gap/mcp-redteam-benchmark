@@ -1,0 +1,30 @@
+# Phase 1 collector configuration.
+#
+# Edit before running. Especially: confirm GitHub queries with your supervisor
+# and the ethics brief before adding queries that fetch high-risk paths.
+
+github_configs:
+  per_page: 100
+  max_pages: 10
+  queries:
+    - 'filename:claude_desktop_config.json "mcpServers"'
+    - 'filename:mcp.json "mcpServers"'
+    - 'path:.cursor/mcp.json'
+    - 'path:**/.vscode/mcp.json'
+    - '"@modelcontextprotocol/sdk" filename:package.json'
+    - '"from mcp.server" language:python'
+
+registries:
+  per_registry_limit: 200      # null = unlimited; raise after pilot validation
+  enabled:
+    # mcp.so (no public JSON API) and composio (v1 retired / v3 needs a key)
+    # were verified dead on 2026-07-05 and removed. See ch05 coverage note.
+    - smithery
+    - glama
+    - pulsemcp
+    - anthropic-servers
+
+sandbox:
+  install_timeout_seconds: 60
+  probe_timeout_seconds: 30
+  default_network: none        # toggled per-server only when justified

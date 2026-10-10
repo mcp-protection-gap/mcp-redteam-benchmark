@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+.env.local
+
+# Never commit a harvest. The measurement corpus is withheld under the
+# disclosure policy described in README.md.
+data/raw/
+data/processed/
+data/findings.json
+data/disclosure-tracker.csv
+data/*-findings.csv
+
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/

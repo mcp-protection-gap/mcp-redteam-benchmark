@@ -1,0 +1,11 @@
+{
+  "gateway": "IBM ContextForge (mcp-contextforge-gateway 1.0.11), pii_filter plugin (cpex-pii-filter 0.3.9)",
+  "evaluation": "plugin-layer: ContextForge's content-detection plugin exercised through its own tool_post_invoke hook, distinct from the end-to-end in-path run done for Lasso. The plugin is the content-detection component; the HTTP/DB transport does not change what is masked.",
+  "secret_in_output_set": {
+    "masked": 1, "n": 6,
+    "detail": "masked only the private endpoint (IP address). The Rust detector supports classic PII (email, ip_address, ssn, credit_card, phone) but NOT credential/token shapes (AWS key, GitHub token, JWT), which are not detected even with detect_aws_keys / detect_api_key / detect_jwt set.",
+    "per_case": {"jwt":"passed","github_pat":"passed","slack_token":"passed","aws_access_key":"passed","gcp_api_key":"passed","private_endpoint":"pii-masked"}
+  },
+  "corpus_77": "not scored end-to-end; ContextForge ships no tool-description poisoning scanner and its pii_filter is not an injection detector, so its content contribution is PII/endpoint masking in outputs only.",
+  "cross_gateway_finding": "The two open-source in-path gateways mask DIFFERENT evidenced harms: Lasso covers credentials (5/6, misses Slack xoxb-), ContextForge covers the private endpoint / classic PII (1/6, no token detection). Neither covers both, so content masking exists but is partial and inconsistent across products."
+}

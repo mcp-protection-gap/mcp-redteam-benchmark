@@ -1,0 +1,96 @@
+{
+  "gateway": "lasso mcp-gateway 1.2.1",
+  "config": "in-path proxy, all free plugins: --scan --plugin basic --plugin presidio",
+  "note": "A real in-path open-source MCP gateway benchmarked on the same 77-case corpus and 500 benign definitions as the static scanners of Chapter 7.",
+  "attack": {
+    "blocked_total": 13,
+    "n": 77,
+    "per_class": {
+      "credential_leakage": {
+        "blocked": 0,
+        "total": 5,
+        "mechanisms": {
+          "out-of-surface": 5
+        },
+        "in_surface": false
+      },
+      "cross_server_exfil": {
+        "blocked": 0,
+        "total": 10,
+        "mechanisms": {
+          "passed": 10
+        },
+        "in_surface": true
+      },
+      "prompt_injection_via_output": {
+        "blocked": 0,
+        "total": 10,
+        "mechanisms": {
+          "passed": 10
+        },
+        "in_surface": true
+      },
+      "rug_pull": {
+        "blocked": 0,
+        "total": 10,
+        "mechanisms": {
+          "temporal-not-rescanned": 10
+        },
+        "in_surface": true
+      },
+      "sampling_injection": {
+        "blocked": 10,
+        "total": 10,
+        "mechanisms": {
+          "sampling-not-relayed": 10
+        },
+        "in_surface": true
+      },
+      "schema_poisoning": {
+        "blocked": 0,
+        "total": 12,
+        "mechanisms": {
+          "passed": 12
+        },
+        "in_surface": true
+      },
+      "supply_chain": {
+        "blocked": 0,
+        "total": 10,
+        "mechanisms": {
+          "out-of-surface": 10
+        },
+        "in_surface": false
+      },
+      "tool_poisoning": {
+        "blocked": 3,
+        "total": 10,
+        "mechanisms": {
+          "scanner": 3,
+          "passed": 7
+        },
+        "in_surface": true
+      }
+    }
+  },
+  "in_surface_runtime": {
+    "classes": [
+      "tool_poisoning",
+      "schema_poisoning",
+      "cross_server_exfil",
+      "prompt_injection_via_output",
+      "sampling_injection"
+    ],
+    "blocked": 13,
+    "n": 52
+  },
+  "benign": {
+    "n": 500,
+    "false_positive_scanner": 13,
+    "fpr": 0.026,
+    "proxy_registration_failures": 6,
+    "proxy_fail_note": "tools the gateway could not register (e.g. a parameter named _context); a compatibility limitation, not a security block"
+  },
+  "masking_demonstration": "a JWT and an RFC1918 endpoint in a tool output were masked to <JWT_TOKEN> and <IP_ADDRESS> in transit (masking-demo.json); the Chapter 4 harms. Not exercised by the 77-case markers, which are not real secrets.",
+  "rug_pull_note": "temporal: the gateway scans once at startup; the scanner would flag 5/10 post-approval versions if it re-scanned, but a rug pull swaps after approval."
+}
