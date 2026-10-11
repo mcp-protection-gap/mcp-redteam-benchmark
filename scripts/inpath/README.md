@@ -114,6 +114,6 @@ cf/bin/python run_contextforge.py --set <masking_set.jsonl> --out cf-verdicts.js
 Result: masks 1/6 (the private endpoint only). Its Rust detector supports
 classic PII (email, ip_address, ssn, credit_card, phone) but not credential /
 token shapes, even with detect_aws_keys / detect_api_key / detect_jwt set. So
-the two gateways mask disjoint halves of the Phase 1 disclosure harm: Lasso the
-credentials, ContextForge the endpoint. Results:
+both gateways mask the endpoint and only Lasso the credentials (five of six,
+missing the Slack bot token). Results:
 `data/results/benchmark/inpath-contextforge/`.

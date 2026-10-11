@@ -7,5 +7,5 @@
     "per_case": {"jwt":"passed","github_pat":"passed","slack_token":"passed","aws_access_key":"passed","gcp_api_key":"passed","private_endpoint":"pii-masked"}
   },
   "corpus_77": "not scored end-to-end; ContextForge ships no tool-description poisoning scanner and its pii_filter is not an injection detector, so its content contribution is PII/endpoint masking in outputs only.",
-  "cross_gateway_finding": "The two open-source in-path gateways mask DIFFERENT evidenced harms: Lasso covers credentials (5/6, misses Slack xoxb-), ContextForge covers the private endpoint / classic PII (1/6, no token detection). Neither covers both, so content masking exists but is partial and inconsistent across products."
+  "cross_gateway_finding": "Both open-source in-path gateways mask the private endpoint; only Lasso masks credentials (5/6 in all, missing Slack xoxb-), while ContextForge masks the endpoint alone (1/6, no token detection). Content masking in the path exists but is partial and inconsistent across products."
 }
