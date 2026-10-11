@@ -15,10 +15,11 @@ corpus/
 results/benchmark/
   none.json                   no-gateway control (aggregate)
   mcp-scan.json               Snyk Agent Scan (aggregate)
+  rerun-2026-09/              Agent Scan, second run (aggregate and per-case verdicts)
+  run-2026-10-11/             Agent Scan, third run, and a grouping test showing that its
+                              verdict on a tool depends on the tools scanned with it
   mcp-scanner-yara.json       Cisco mcp-scanner, YARA analyzer (aggregate)
   *-verdicts.jsonl            per-case verdicts: case id, blocked, evidence, latency
-  rerun-2026-09/              later re-run of the cloud scanner; its verdicts differ
-                              from the reported run (dissertation Section 7.7)
 results/adjudication/
   hygiene-adjudication.csv    written-rule adjudication of the four hygiene flags
   agent-scan-code-split-*.json  rater-free check on scanner false positives

@@ -1,0 +1,30 @@
+{
+  "gateway": "mcp-scan",
+  "n_attack": 77,
+  "n_attack_blocked": 0,
+  "n_benign": 500,
+  "n_benign_blocked_fp": 137,
+  "tpr": 0.0,
+  "fpr": 0.274,
+  "per_class_tpr": {
+    "tool_poisoning": 0.0,
+    "rug_pull": 0.0,
+    "cross_server_exfil": 0.0,
+    "sampling_injection": 0.0,
+    "schema_poisoning": 0.0,
+    "supply_chain": 0.0,
+    "prompt_injection_via_output": 0.0,
+    "credential_leakage": 0.0
+  },
+  "latency_ms": {
+    "median": 419.8602798001957,
+    "p50": 419.8602798001957,
+    "p95": 528.5121483000694,
+    "p99": 1625.5381229166233
+  },
+  "bypass": {
+    "n_mutants": 0,
+    "n_bypassed": 0,
+    "rate": NaN
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "scanner": "snyk-agent-scan 0.5.15",
+  "date": "2026-10-11",
+  "purpose": "Does Agent Scan's verdict on a tool depend on the other tools served by the same server? Each group was served to the scanner as one stdio server and scanned twice; both scans of a group returned the same result.",
+  "control": {"group": "vendor's published tool-poisoning example, one tool", "tools": 1, "issues": {"E001": 1, "W017": 1}, "tools_flagged": 1},
+  "groups": [
+    {"group": "one tool-poisoning base case alone", "tools": 1, "issues": {"E001": 1, "W017": 1}, "tools_flagged": 1, "repeats": 2},
+    {"group": "two tool-poisoning cases", "tools": 2, "issues": {}, "tools_flagged": 0, "repeats": 1},
+    {"group": "all ten tool-poisoning cases", "tools": 10, "issues": {}, "tools_flagged": 0, "repeats": 2},
+    {"group": "all twelve full-schema cases", "tools": 12, "issues": {"E001": 1}, "tools_flagged": 12, "note": "one issue whose affected_tools lists all twelve", "repeats": 2},
+    {"group": "all 32 in-surface attack cases", "tools": 32, "issues": {}, "tools_flagged": 0, "repeats": 2}
+  ]
+}
