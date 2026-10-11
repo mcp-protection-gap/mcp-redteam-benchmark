@@ -117,3 +117,14 @@ token shapes, even with detect_aws_keys / detect_api_key / detect_jwt set. So
 both gateways mask the endpoint and only Lasso the credentials (five of six,
 missing the Slack bot token). Results:
 `data/results/benchmark/inpath-contextforge/`.
+
+## The extended secret-in-output set (36 cases)
+
+`masking_set_extended.py` generates 36 cases: 15 in the secret shapes the
+configuration corpus contained (GitHub tokens, JSON Web Tokens, private IPv4
+addresses, internal hostnames) and 21 in common provider key formats, each kind
+in more than one context. Tokens are assembled at run time and never written to
+the repository. Scoring is strict: a case is masked only if the secret itself
+is absent from the forwarded output. Lasso masked 16 of 36, ContextForge 7 of
+36; neither masked an internal hostname. Results:
+`results/benchmark/inpath-*/masking-36-verdicts.jsonl`.

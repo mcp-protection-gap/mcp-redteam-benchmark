@@ -18,6 +18,12 @@ results/benchmark/
   rerun-2026-09/              Agent Scan, second run (aggregate and per-case verdicts)
   run-2026-10-11/             Agent Scan, third run, and a grouping test showing that its
                               verdict on a tool depends on the tools scanned with it
+  inpath-*/masking-36-verdicts.jsonl
+                              36-case secret-in-output set (Lasso 16/36, ContextForge 7/36);
+                              generator: scripts/inpath/masking_set_extended.py
+  external-seeds/             ten tool-poisoning seeds from published proofs of concept
+                              (YARA 10/10, Lasso 3/10); builder: scripts/external_seeds.py,
+                              which fetches the sources at pinned commits
   mcp-scanner-yara.json       Cisco mcp-scanner, YARA analyzer (aggregate)
   *-verdicts.jsonl            per-case verdicts: case id, blocked, evidence, latency
 results/adjudication/

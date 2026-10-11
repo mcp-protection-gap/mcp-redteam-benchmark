@@ -88,8 +88,16 @@ def verdict(case: dict, res: dict, stderr: str) -> dict:
             out["blocked"], out["mechanism"] = True, "not-exposed"
         else:
             redacted = bool(re.search(r"<[A-Z][A-Z_]{1,}>", forwarded))
-            out["blocked"] = redacted
-            out["mechanism"] = "masked" if redacted else "passed"
+            if case["threat_class"] == "credential_in_output":
+                # Masking sets carry a real-shaped secret as the marker, so the
+                # strict test applies: the marker itself must be gone. A
+                # placeholder elsewhere in the output does not count.
+                survived = marker in forwarded
+                out["blocked"] = bool(forwarded) and not survived
+                out["placeholder_inserted"] = redacted
+            else:
+                out["blocked"] = redacted
+            out["mechanism"] = "masked" if out["blocked"] else "passed"
     elif target == "sampling_response":
         # Neutralised iff the gateway did not relay the sampling request.
         answered = '"sampling_answered": true' in forwarded
