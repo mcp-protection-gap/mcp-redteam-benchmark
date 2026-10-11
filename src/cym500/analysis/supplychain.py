@@ -238,7 +238,9 @@ def supply_chain_concentration(top_n: int = 10) -> dict:
 
     for idx, c in enumerate(configs.read(ConfigArtefact)):
         n_configs += 1
-        cid = c.id or f"_idx{idx}"
+        # Keyed by record position: `id` is a hash of the redacted content, so
+        # separately committed configurations that redact to the same text share it.
+        cid = f"_idx{idx}"
         seen_here = False
         for e in c.server_entries:
             if not isinstance(e, dict):
